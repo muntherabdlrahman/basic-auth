@@ -9,6 +9,11 @@ const app = express();
 const {basicAuth,trySignUp }=require('./auth/auth.model')
 app.use(express.json());
 
+app.get('/',(req,res)=>{
+    res.send('hello and welcom form backend')
+
+})
+
 app.post('/signup',trySignUp ,(req, res, next) => {
   
     res.status(201).json(req.record);
